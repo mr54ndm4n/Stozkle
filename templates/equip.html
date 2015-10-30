@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block title %}Store:{{equip.name}}{% endblock %}
+{% block content %}
+	<br><br>
+	<div class="container">
+		<h1>{{equip.name}}</h1>
+		<h3>Size: {{equip.size}}&nbsp;&nbsp;&nbsp;Amount in Store: {{equip.amount}}</h3>
+		{% if equip.detail != '' %}
+		<div class="panel panel-default">
+		<div class="panel-heading">Detail</div>
+			<div class="panel-body">
+				{{equip.detail}}
+			</div>
+		</div>
+		{% endif %}
+		{% if equip.address != '' %}
+		<div class="panel panel-default">
+		<div class="panel-heading">Address</div>
+			<div class="panel-body">
+				{{equip.address}}
+			</div>
+		</div>
+		{% endif %}
+		<form id="login_form" method="post" action="/store/{{equip.id}}/">
+			{% csrf_token %}
+			<div class="row">
+				<div class="col-md-3 col-md-offset-7">
+					<div class="input-group">
+						<span class="input-group-addon" id="basic-addon1">Borrow</span>
+						<input type="text" class="form-control" placeholder="XXX" aria-describedby="basic-addon2" name="amount">
+						<span class="input-group-addon" id="basic-addon2">{{equip.name}}</span>
+					</div>
+				</div>
+				{% if equip.amount == 0 %}
+					<input type="submit" class="btn btn-danger myButton" disabled="disabled" value="Borrow" name="borrow"/>
+				{% else %}
+				<div class="col-md-2">
+					<input type="submit" class="btn btn-primary myButton" value="Borrow" />
+				</div>
+				{% endif %}
+			</div>
+		</form>
+		<br>
+	</div>
+{% endblock %}
+{% block js %}
+	{{scp}}
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title %}Profile: My Store{% endblock %}
+
+{% block content %}
+<div class="jumbotron" style="background-color: #FAFAFA">
+	<h1>My Profile</h1>
+	<div class="container">
+		<h2>Student ID: {{member.student_id}}</h2>
+		<h2>Name: {{user.get_full_name}} ({{member.nick_name}})</h2>
+		<h2>year: {{member.year}}</h2>
+		<h3>Equipment List: There're {{count}} item in list</h3>
+		<form action="/store/profile/" method="POST">
+			{% csrf_token %}
+			<center>
+			<table class="table table-striped" style="width:80%;">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Name</th>
+						<th>Amount</th>
+						<th colspan="2" class="text-center" style="width:10%;">Return</th>
+					</tr>
+					<tbody>
+						{% for equip in equips %}
+							<tr>
+								<td>{{ forloop.counter }}</td>
+								<td><a href="/store/{{equip.id}}">{{equip.name}}</a></td>
+								<td>{{equip.amount}}</td>
+								<td><input type="text" class="form-control" placeholder="{{equip.amount}}" aria-describedby="basic-addon2" name="amount{{equip.name}}" style="width:100px;"></td>
+								<td><input type="submit" class="btn btn-danger" value="Return" name="{{equip.name}}"/></td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</thead>
+			</table>
+			</center>
+		</form>
+	</div>
+</div>
+{% endblock %}

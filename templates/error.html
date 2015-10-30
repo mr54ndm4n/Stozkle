@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block title %}Error: My Store{% endblock %}
+{% block content %}
+	<div class="alert alert-danger alert-dismissible fade in" role="alert">
+		<center><span class="glyphicon glyphicon-warning-sign" aria-hidden="true" style="font-size: 75px;"></span>
+		<h1>You got an error!</h1><h3>"{{error}}"</h3>
+		<a href="{{link}}"><button type="button" class="btn btn-lg btn-danger">back</button></a>
+		</center>
+    </div>
+{% endblock %}

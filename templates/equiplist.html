@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block title %}Home: My Store{% endblock %}
+
+{% block content %}
+<!-- <h1>Welcome Home! {{member.nick_name}}</h1>
+<br>{{user}}<br> -->
+<h1>My Store</h1>
+<h3>There're {{equips.count}} item in list</h3>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Name</th>
+			<th>Amount</th>
+			<th>Borrow</th>
+		</tr>
+		<tbody>
+			{% for equip in equips|dictsortreversed:'amount' %}
+				<tr>
+
+					<td>{{ forloop.counter }}</td>
+					<td><a href="/store/{{equip.id}}">{{equip.name}}</a></td>
+					<td>{{equip.amount}}</td>
+					<td>
+						<a href="/store/{{equip.id}}">
+							{% if equip.amount == 0 %}
+							<button class="btn btn-danger" disabled="disabled">Borrow!</button>
+							{% else %}
+							<button class="btn btn-success">Borrow!</button>
+							{% endif %}
+						</a>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</thead>
+</table>
+{% endblock %}
