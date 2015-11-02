@@ -1,5 +1,14 @@
 # Stozkle
-Stozkle is store manager systems using Django
+Stozkle is stock manager systems using Django
+this project is for borrow something from stock
+if you want to change it to shopping website
+you can change "Borrow" in file [equip](listStozkle/templates/equiplist.html) and [equip.html](https://github.com/DreamN/Stozkle/templates/equip.html) to "Buy"
+
+![User's Profile](http://isara.kmi.tl/Stozkle/Stozkle1.PNG)
+![Item in the Store](http://isara.kmi.tl/Stozkle/Stozkle2.PNG)
+![Product's detail](http://isara.kmi.tl/Stozkle/Stozkle3.png)
+
+
 ## To Run the app
 
 1. python manage.py migrate
@@ -12,7 +21,7 @@ Stozkle is store manager systems using Django
 
 1. "127.0.0.0:8000/admin" and login by superuser
 
-2. in member Mystock goto member (http://127.0.0.1:8000/admin/myStock/member/)
+2. in Mystock go to member (http://127.0.0.1:8000/admin/myStock/member/)
 
 3. create user Nick name = "Store"
 
