@@ -1,7 +1,10 @@
 # Stozkle
 Stozkle is stock manager systems using Django
+
 this project is for borrow something from stock
+
 if you want to change it to shopping website
+
 you can change "Borrow" in file [equip](https://github.com/DreamN/Stozkle/blob/master/templates/equiplist.html) and [equip.html](https://github.com/DreamN/Stozkle/blob/master/templates/equip.html) to "Buy"
 
 ![User's Profile](http://isara.kmi.tl/Stozkle/Stozkle1.PNG)
