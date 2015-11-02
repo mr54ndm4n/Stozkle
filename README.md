@@ -1,5 +1,5 @@
 # Stozkle
-Stozkle is stock manager systems using Django and Boostrap
+Stozkle is stock management systems using Django and Boostrap
 
 this project is for borrow something from stock
 
