@@ -11,6 +11,8 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^login/', views.login),
     url(r'^logout/', views.logout),
+    url(r'^addproduct/', views.add_product)
+    url(r'^adduser' views.add_user)
     # url(r'^login/', 'django.contrib.auth.views.login'),
     # url(r'login',
     # 	'django.contrib.auth.views.login',

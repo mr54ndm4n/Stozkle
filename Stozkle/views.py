@@ -41,3 +41,13 @@ def login(request):
 def logout(request):
 	auth_logout(request)
 	return render(request, 'home.html', {'main': 'Hi There!'})
+
+@user_passes_test(lambda u: u.is_superuser)
+def add_product(request):
+    context = RequestContext(request)
+    return render_to_response('addproduct.html', {}, context)
+
+@user_passes_test(lambda u: u.is_superuser)
+def add_user(request):
+    context = RequestContext(request)
+    return render_to_response('adduser.html', {}, context)

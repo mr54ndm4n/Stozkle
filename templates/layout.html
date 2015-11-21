@@ -38,6 +38,14 @@
                             <a href="/login">Login</a>
                         {% endif %}
                     </li>
+                    {% if request.user.is_superuser %}
+                        <li>
+                            <a href="/addproduct">Add Product</a>
+                        </li>
+                        <li>
+                            <a href="/adduser">Add User</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
